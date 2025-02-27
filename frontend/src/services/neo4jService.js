@@ -1,3 +1,7 @@
+
+
+/* UNCOMMENT WHEN NEO4J IS READY. USE MOCK DATA BELOW FOR NOW
+
 import neo4j from 'neo4j-driver'
 
 class Neo4jService {
@@ -57,3 +61,37 @@ class Neo4jService {
 }
 
 export default new Neo4jService() 
+
+*/
+
+// Mock data for development
+const mockStatistics = {
+  get: (key) => ({
+    low: key === 'totalNodes' ? 150 : 5
+  })
+}
+
+const mockDistribution = [
+  { label: 'Person', count: 50 },
+  { label: 'Movie', count: 40 },
+  { label: 'Actor', count: 35 },
+  { label: 'Director', count: 15 },
+  { label: 'Genre', count: 10 }
+]
+
+// Mock service methods
+const neo4jService = {
+  getStatistics: async () => {
+    // Simulate network delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+    return mockStatistics;
+  },
+
+  getNodeDistribution: async () => {
+    // Simulate network delay
+    await new Promise(resolve => setTimeout(resolve, 500));
+    return mockDistribution;
+  }
+};
+
+export default neo4jService;
