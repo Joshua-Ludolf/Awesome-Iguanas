@@ -1,15 +1,11 @@
-
-
-/* UNCOMMENT WHEN NEO4J IS READY. USE MOCK DATA BELOW FOR NOW
-
 import neo4j from 'neo4j-driver'
 
+/* Only Remove When Neo4j is ready to be used
 class Neo4jService {
   constructor() {
-    // Replace these with your Neo4j credentials
-    this.uri = 'neo4j://localhost:7687'
-    this.user = 'neo4j'
-    this.password = 'your-password'
+    this.uri = import.meta.env.VITE_NEO4J_URI
+    this.user = import.meta.env.VITE_NEO4J_USER
+    this.password = import.meta.env.VITE_NEO4J_PASSWORD
     
     this.driver = neo4j.driver(
       this.uri,
@@ -60,9 +56,12 @@ class Neo4jService {
   }
 }
 
-export default new Neo4jService() 
+export default new Neo4jService()
 
 */
+
+
+//UNCOMMENT the above WHEN NEO4J IS READY. USE MOCK DATA BELOW FOR NOW
 
 // Mock data for development
 const mockStatistics = {
@@ -95,3 +94,4 @@ const neo4jService = {
 };
 
 export default neo4jService;
+

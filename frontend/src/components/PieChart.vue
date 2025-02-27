@@ -21,7 +21,7 @@ export default {
     // Create the chart
     const ctx = this.$refs.pieChart
     this.chart = new Chart(ctx, {
-      type: 'pie',
+      type: 'doughnut',
       data: {
         labels: distribution.map(item => item.label),
         datasets: [{
