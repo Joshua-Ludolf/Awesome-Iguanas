@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import Charts from '../views/Charts.vue'
 
 const routes = [
   {
@@ -9,7 +10,7 @@ const routes = [
   {
     path: '/charts',
     name: 'Charts',
-    component: () => import('../views/Charts.vue')
+    component: Charts
   },
   {
     path: '/about',
